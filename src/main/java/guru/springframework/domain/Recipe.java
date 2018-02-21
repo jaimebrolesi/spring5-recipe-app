@@ -13,8 +13,6 @@ public class Recipe extends AbstractEntity {
     private String source;
     private String url;
     private String directions;
-    //TODO add
-    //private Difficulty difficulty;
 
     @Lob
     private Byte[] image;
@@ -24,6 +22,9 @@ public class Recipe extends AbstractEntity {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
     private Set<Ingredient> ingredients;
+
+    @Enumerated(EnumType.STRING)
+    private Difficulty difficulty;
 
     public String getDescription() {
         return description;
@@ -103,5 +104,13 @@ public class Recipe extends AbstractEntity {
 
     public void setIngredients(Set<Ingredient> ingredients) {
         this.ingredients = ingredients;
+    }
+
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
     }
 }
