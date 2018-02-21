@@ -5,7 +5,7 @@ import javax.persistence.ManyToMany;
 import java.util.Set;
 
 @Entity
-public class Category  extends AbstractEntity {
+public class Category extends AbstractEntity {
 
     private String description;
 
